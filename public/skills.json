@@ -16,7 +16,7 @@
     { "name": "Notebook LM", "category": "AI Tools" },
     { "name": "MongoDB", "category": "Database" },
     { "name": "MySQL", "category": "Database" },
-    { "name": "Postman", "category": "API Tools" },
+    { "name": "Postman", "category": "API" },
     { "name": "Data Structures & Algorithms", "category": "Other" },
     { "name": "GitHub", "category": "Other" }
   ]
