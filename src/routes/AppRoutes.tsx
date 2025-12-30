@@ -5,6 +5,8 @@ import Skills from "@/pages/Skills.tsx";
 import Work from "@/pages/Work.tsx";
 import NotFound from "@/pages/NotFound.tsx";
 import Projects from "@/pages/Projects";
+import React from "react";
+
 
 const AppRoutes = () => {
   return (

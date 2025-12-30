@@ -4,6 +4,7 @@ import { File, BookOpen, Briefcase, Smile, LocateFixed, FolderOpenDot } from "lu
 import { SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "../ui/sidebar";
 import { Link } from "react-router-dom";
 import SocialMedia from "@/pages/SocialMedia";
+import React from "react";
 
 const Navbar = () => {
   return (

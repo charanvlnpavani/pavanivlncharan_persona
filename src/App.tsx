@@ -3,6 +3,7 @@ import Navbar from "./components/common/Navbar";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
+import React from "react";
 
 function App() {
   return (
