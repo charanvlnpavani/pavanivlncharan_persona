@@ -8,7 +8,7 @@ const HeroPic = () => {
       >
         <AvatarImage
           className="h-full w-full object-cover"
-          src="/hero-pic.jpeg"
+          src="/"
           alt="Hero Picture"
         />
         <AvatarFallback
