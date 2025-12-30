@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import React from "react";
+// ...existing code...
 const HeroPic = () => {
   return (
     <>

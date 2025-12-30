@@ -8,7 +8,7 @@ import {
   CardAction,
   CardContent,
 } from "@/components/ui/card";
-import React from "react";
+// ...existing code...
 
 const Study = () => {
   const education: Education[] = PROFILE.education ?? [];

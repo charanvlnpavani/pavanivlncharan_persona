@@ -13,6 +13,8 @@ export type Project = {
   title: string;
   summary: string;
   link?: string;
+  githublink?: string; // Match your JSON key
+  lang: string[]; // Match your JSON key
 };
 
 export type Education = {

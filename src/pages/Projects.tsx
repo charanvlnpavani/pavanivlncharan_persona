@@ -36,20 +36,19 @@ const Projects: React.FC = () => {
               className="h-[45vh] overflow-scroll flex flex-col justify-between"
             >
               <CardHeader>
-                <CardTitle>{p.title}</CardTitle>
+                <CardTitle className="text-lg">{p.title}</CardTitle>
                 <CardDescription>{p.summary}</CardDescription>
               </CardHeader>
               <CardContent className="mt-4">
-                {Array.isArray(p.languageSkills) &&
-                  p.languageSkills.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {p.languageSkills.map((skill) => (
-                        <Badge key={skill} variant="secondary">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
+                {Array.isArray(p.lang) && p.lang.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {p.lang.map((skill) => (
+                      <Badge key={skill} variant="secondary">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
                 <div className="flex gap-2">
                   <a
                     href={p.link || undefined}
@@ -69,16 +68,16 @@ const Projects: React.FC = () => {
                     </Button>
                   </a>
                   <a
-                    href={p.gitlink || undefined}
+                    href={p.githublink || undefined}
                     target="_blank"
                     rel="noreferrer"
                     className="flex-1"
-                    tabIndex={p.gitlink ? 0 : -1}
+                    tabIndex={p.githublink ? 0 : -1}
                   >
                     <Button
                       variant="outline"
                       className="w-full"
-                      disabled={!p.gitlink}
+                      disabled={!p.githublink}
                       type="button"
                     >
                       <Github className="mr-2" size={16} />

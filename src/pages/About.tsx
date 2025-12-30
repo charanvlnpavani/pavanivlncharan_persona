@@ -1,4 +1,4 @@
-import React from "react";
+// ...existing code...
 import HeroPic from "@/components/common/HeroPic";
 import {
   Card,
