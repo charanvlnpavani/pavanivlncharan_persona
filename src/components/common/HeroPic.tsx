@@ -8,7 +8,7 @@ const HeroPic = () => {
       >
         <AvatarImage
           className="h-full w-full object-cover"
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.zB1rsS80G2GPbY0mMvKnigHaEK%3Fpid%3DApi&f=1&ipt=376339d16d178237dbb49384b22d7ef70d5724ffdc9c75269cf4dbfc74a8bc01&ipo=images"
+          src="/hero-pic.jpeg"
           alt="Hero Picture"
         />
         <AvatarFallback
