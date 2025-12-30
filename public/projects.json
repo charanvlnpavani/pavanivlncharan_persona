@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "title": "CoffeeQueue Pro",
+      "summary": "In busy café environments, long physical queues frustrate customers and reduce operational efficiency. CoffeeQueue Pro solves this by offering a virtual queue system where customers can join the queue online, see their real-time position, and receive updates without waiting in line — freeing them to relax, browse the café menu, or explore nearby areas while they wait..",
+      "link": "https://coffeequeue-pro.vercel.app",
+      "gitlink": "https://github.com/charanvlnpavani/employee-management-id-system",
+      "languageSkills": [
+        "React.js",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Responsive Web Design",
+        "Git & GitHub"
+      ]
+    },
+
+    {
+      "title": "AI Recipe Creator",
+      "summary": "AI Recipe Creator uses natural language prompts to generate complete recipes tailored to available ingredients, dietary restrictions, serving size, and cuisine style. It produces ingredient lists, step-by-step instructions, and optional shopping or nutrition info to make cooking faster and easier.",
+      "link": "https://ai-recipe-creator-alpha.vercel.app/",
+      "gitlink": "https://github.com/charanvlnpavani/ai_recipe_creator",
+      "languageSkills": [
+        "React.js",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Responsive Web Design",
+        "Git & GitHub"
+      ]
+    },
+    {
+      "title": "Communication App",
+      "summary": "Built a responsive real-time communication platform using React.js and modern frontend practices. The app allows users to send and receive messages in a chat interface, view active conversations, manage contacts, and features an intuitive UI with smooth, user-friendly interaction flows. Backend functionality is simulated using local state and storage to prototype real-world UX.",
+      "link": "https://home-task-cyan.vercel.app/",
+      "gitlink": "https://github.com/charanvlnpavani/doctor-communicate",
+      "languageSkills": [
+        "React.js",
+        "JavaScript",
+        "CSS",
+        "Responsive Design",
+        "Local Storage"
+      ]
+    }
+  ]
+}

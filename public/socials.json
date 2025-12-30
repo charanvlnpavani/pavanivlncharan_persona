@@ -1,0 +1,20 @@
+[
+  {
+    "id": "linkedin",
+    "name": "LinkedIn",
+    "href": "https://www.linkedin.com/in/charanvlnpavani/",
+    "icon": "Linkedin"
+  },
+  {
+    "id": "gmail",
+    "name": "Gmail",
+    "href": "mailto:pavanivlncharan@outlook.com",
+    "icon": "Mail"
+  },
+  {
+    "id": "twitter",
+    "name": "Twitter",
+    "href": "https://x.com/charanvlnpavani",
+    "icon": "Twitter"
+  }
+]

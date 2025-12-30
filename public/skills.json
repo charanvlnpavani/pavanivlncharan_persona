@@ -1,0 +1,17 @@
+{
+  "skills": [
+    { "name": "HTML", "category": "Frontend" },
+    { "name": "CSS", "category": "Frontend" },
+    { "name": "JavaScript", "category": "Frontend" },
+    { "name": "React", "category": "Frontend" },
+    { "name": "TypeScript", "category": "Frontend" },
+    { "name": "Bootstrap", "category": "Frontend" },
+    { "name": "Tailwind CSS", "category": "Frontend" },
+    { "name": "Node.js", "category": "Backend" },
+    { "name": "PHP", "category": "Backend" },
+    { "name": "MongoDB", "category": "Database" },
+    { "name": "MySQL", "category": "Database" },
+    { "name": "Data Structures & Algorithms", "category": "Other" },
+    { "name": "System Design", "category": "Other" }
+  ]
+}
