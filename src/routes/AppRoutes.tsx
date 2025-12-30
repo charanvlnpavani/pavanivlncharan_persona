@@ -5,8 +5,6 @@ import Skills from "@/pages/Skills.tsx";
 import Work from "@/pages/Work.tsx";
 import NotFound from "@/pages/NotFound.tsx";
 import Projects from "@/pages/Projects";
-import React from "react";
-
 
 const AppRoutes = () => {
   return (
@@ -15,7 +13,7 @@ const AppRoutes = () => {
       <Route path="/education" element={<Study />} />
       <Route path="/skills" element={<Skills />} />
       <Route path="/experience" element={<Work />} />
-        <Route path="/projects" element={<Projects />} />
+      <Route path="/projects" element={<Projects />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

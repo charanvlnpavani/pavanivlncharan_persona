@@ -1,6 +1,5 @@
 import HeroPic from "@/components/common/HeroPic";
 import { Card } from "@/components/ui/card";
-import React from "react";
 const Profile = () => {
   return (
     <>

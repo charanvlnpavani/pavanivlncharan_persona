@@ -1,10 +1,16 @@
 import Profile from "@/pages/Profile";
 import { ButtonClick } from "./ButtonClick";
-import { File, BookOpen, Briefcase, Smile, LocateFixed, FolderOpenDot } from "lucide-react";
+import {
+  File,
+  BookOpen,
+  Briefcase,
+  Smile,
+  LocateFixed,
+  FolderOpenDot,
+} from "lucide-react";
 import { SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "../ui/sidebar";
 import { Link } from "react-router-dom";
 import SocialMedia from "@/pages/SocialMedia";
-import React from "react";
 
 const Navbar = () => {
   return (

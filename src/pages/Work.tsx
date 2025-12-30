@@ -1,6 +1,5 @@
 import PROFILE from "@/lib/profile";
 import type { Experience } from "@/lib/profile";
-import React from "react";
 import {
   Card,
   CardHeader,
