@@ -8,12 +8,15 @@
     { "name": "Bootstrap", "category": "Frontend" },
     { "name": "Tailwind CSS", "category": "Frontend" },
     { "name": "Node.js", "category": "Backend" },
+    { "name": "Express.js", "category": "Backend" },
     { "name": "PHP", "category": "Backend" },
     { "name": "ChatGPT", "category": "AI Tools" },
     { "name": "GitHub Copilot", "category": "AI Tools" },
     { "name": "Perplexity", "category": "AI Tools" },
+    { "name": "Notebook LM", "category": "AI Tools" },
     { "name": "MongoDB", "category": "Database" },
     { "name": "MySQL", "category": "Database" },
+    { "name": "Postman", "category": "API Tools" },
     { "name": "Data Structures & Algorithms", "category": "Other" },
     { "name": "GitHub", "category": "Other" }
   ]
