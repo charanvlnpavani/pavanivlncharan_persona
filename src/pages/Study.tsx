@@ -23,11 +23,9 @@ const Study = () => {
   });
 
   return (
-    <div className="mx-auto w-[20vw] py-12 px-4">
+    <div className="mx-auto w-[80vw] h-[93vh] border rounded-xl shadow py-12 px-4">
       <h1 className="text-xl font-bold mb-1">Education</h1>
-      <p className="text-sm text-muted-foreground mb-6">
-        Academic background — Arranged newest first
-      </p>
+      <p className="text-sm text-muted-foreground mb-6">Academic background</p>
 
       {sorted.length === 0 ? (
         <div className="p-6 rounded-lg bg-muted/5">

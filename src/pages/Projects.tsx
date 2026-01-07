@@ -23,8 +23,11 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8 w-[80vw] h-[90vh] overflow-y-scroll">
-      <h1 className="text-2xl font-bold mb-6">Projects</h1>
+    <div className="container mx-auto px-4 py-8 w-[80vw] h-[90vh] overflow-y-scroll border rounded-xl shadow ">
+      <h1 className="text-2xl font-bold mb-1">Projects</h1>
+      <p className="text-sm text-muted-foreground mb-6">
+        Own Building Projects{" "}
+      </p>
 
       {projects.length === 0 ? (
         <p className="text-muted-foreground">No projects found.</p>

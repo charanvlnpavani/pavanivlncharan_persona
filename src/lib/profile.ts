@@ -53,7 +53,7 @@ const PROFILE = {
     {
       company: "NxtWave",
       role: "Software Developer Engineer",
-      timeframe: "Sep 2025 - Present",
+      timeframe: "Sep 2025 - Dec 2025",
       employmentType: "Full-time",
       location: "Hyderabad, Telangana, India",
       bullets: [
@@ -72,7 +72,7 @@ const PROFILE = {
     {
       company: "Logpilot",
       role: "SDE - 1 — Frontend Developer",
-      timeframe: "Dec 2024 - Sep 2025",
+      timeframe: "Dec 2024 - Jun 2025",
       employmentType: "Full-time",
       location: "Germany · Remote",
       bullets: [

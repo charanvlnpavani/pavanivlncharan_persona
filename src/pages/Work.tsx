@@ -23,10 +23,10 @@ const Work = () => {
   });
 
   return (
-    <div className="mx-auto max-w-4xl py-12 px-4 overflow-y-scroll h-[90vh] ">
+    <div className="mx-auto  py-12 px-4 overflow-y-scroll  h-[93vh] w-[80vw] border rounded-xl shadow ">
       <h1 className="text-3xl font-bold mb-1">Experience</h1>
       <p className="text-sm text-muted-foreground mb-6">
-        Professional experience — newest first
+        Professional experience
       </p>
 
       {sorted.length === 0 ? (
@@ -38,7 +38,7 @@ const Work = () => {
       ) : (
         <div className="space-y-8">
           {sorted.map((exp, idx) => (
-            <Card key={idx} className="w-full">
+            <Card key={idx} className="w-[60vw]  my-5">
               <CardHeader className="flex items-start justify-between gap-4">
                 <div className="min-w-0 pr-6">
                   <CardTitle className="text-lg font-semibold leading-tight">
