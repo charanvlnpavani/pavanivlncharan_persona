@@ -16,5 +16,11 @@
     "name": "Twitter",
     "href": "https://x.com/charanvlnpavani",
     "icon": "Twitter"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "href": "https://github.com/charanvlnpavani",
+    "icon": "Github"
   }
 ]
