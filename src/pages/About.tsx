@@ -18,7 +18,9 @@ const About = () => {
             <HeroPic />
             <div>
               <CardTitle className="text-lg">{PROFILE.name}</CardTitle>
-              <CardDescription>{PROFILE.headline}</CardDescription>
+              <CardDescription>
+                {PROFILE.experience} - {PROFILE.headline}
+              </CardDescription>
               <p className="text-xs text-muted-foreground">
                 {PROFILE.location}
               </p>

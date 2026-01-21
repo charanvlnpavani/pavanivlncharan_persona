@@ -28,7 +28,8 @@ export type Education = {
 
 const PROFILE = {
   name: "Pavani VLN Charan",
-  headline: "Full-Stack Developer at LogPilot",
+  experience: "3+ Years",
+  headline: "Full-Stack Developer",
   location: "Hyderabad, India",
   summary:
     "I am a Full-Stack Developer at LogPilot with experience in building scalable, secure, and user-centric web applications. I specialize in JavaScript, React.js, Node JS, Mongo DB, Express JS , Tailwind CSS and REST APIs, delivering complete end-to-end solutions from frontend interfaces to backend systems. I have developed and integrated role-based authentication and authorization systems for enterprise and government applications, ensuring secure multi-user access. I have also engineered a multi-role B2B SaaS platform for property management and built a B2B employee management system with automated PDF ID card generation, improving operational efficiency.I am passionate about clean code, performance optimization, and learning modern full-stack technologies. I enjoy collaborating with cross-functional teams to build reliable products that solve real-world problems.",
