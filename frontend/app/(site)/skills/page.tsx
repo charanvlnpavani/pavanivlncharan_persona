@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import { EmptyState, PageHeader } from "@/components/site/section";
 import { SkillGroups } from "@/components/site/skill-groups";
-import { getSkillCategories } from "@/lib/content";
+import { getSite } from "@/lib/api";
 
-export const metadata: Metadata = {
-  title: "Skills",
-  description: "Languages, frameworks, databases and tools Pavani VLN Charan works with.",
-  alternates: { canonical: "/skills" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { profile } = await getSite();
+  return {
+    title: "Skills",
+    description: `Languages, frameworks, databases and tools ${profile.fullName} works with.`,
+    alternates: { canonical: "/skills" },
+  };
+}
 
 export default async function SkillsPage() {
-  const categories = await getSkillCategories();
+  const { skills } = await getSite();
   return (
     <>
       <PageHeader
@@ -18,7 +21,7 @@ export default async function SkillsPage() {
         title="My toolkit"
         description="The languages, frameworks and tools I use to take products from idea to production."
       />
-      {categories.length === 0 ? <EmptyState title="No skills listed yet" /> : <SkillGroups categories={categories} />}
+      {skills.length === 0 ? <EmptyState title="No skills listed yet" /> : <SkillGroups categories={skills} />}
     </>
   );
 }

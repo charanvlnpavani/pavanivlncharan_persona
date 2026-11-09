@@ -118,15 +118,15 @@
   }
 }
 
-/* Subtle fade-up as sections scroll into view. CSS-only, no JavaScript.
-   Skipped for reduced-motion users and in browsers without scroll timelines. */
+/* Subtle slide-up as sections scroll into view. CSS-only, no JavaScript.
+   Deliberately no opacity change: content must stay readable when a page is
+   rendered without scrolling (print, full-page screenshots, link-preview
+   crawlers). Skipped for reduced-motion users and older browsers. */
 @keyframes reveal {
   from {
-    opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(14px);
   }
   to {
-    opacity: 1;
     transform: none;
   }
 }
@@ -139,4 +139,76 @@
       animation-range: entry 0% entry 35%;
     }
   }
+}
+
+/* Blog article body. The HTML is sanitized by the API before it's stored. */
+.prose-content {
+  line-height: 1.75;
+  color: var(--foreground);
+}
+.prose-content > * + * {
+  margin-top: 1.1em;
+}
+.prose-content h2 {
+  margin-top: 2em;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.prose-content h3 {
+  margin-top: 1.6em;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.prose-content h4 {
+  margin-top: 1.4em;
+  font-weight: 600;
+}
+.prose-content a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-content ul {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+.prose-content ol {
+  list-style: decimal;
+  padding-left: 1.4em;
+}
+.prose-content li + li {
+  margin-top: 0.35em;
+}
+.prose-content blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 1em;
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.prose-content code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--muted);
+  border-radius: 0.3em;
+  padding: 0.15em 0.35em;
+}
+.prose-content pre {
+  overflow-x: auto;
+  background: var(--muted);
+  border-radius: var(--radius);
+  padding: 1em;
+  font-size: 0.875rem;
+}
+.prose-content pre code {
+  background: none;
+  padding: 0;
+}
+.prose-content img {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.prose-content hr {
+  border-color: var(--border);
+  margin: 2em 0;
 }

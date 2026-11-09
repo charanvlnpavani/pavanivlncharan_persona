@@ -1,0 +1,409 @@
+// Portfolio database schema.
+//
+// Content tables are the admin's working copy. Publishing freezes the
+// published, visible rows into a ContentRevision snapshot; the public site and
+// the resume generator read only from the latest revision.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  ARCHIVED
+  SPAM
+}
+
+enum ResumeVersionStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+}
+
+enum MediaKind {
+  IMAGE
+  DOCUMENT
+}
+
+// ───────────────────────── Auth ─────────────────────────
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  sessions  Session[]
+  revisions ContentRevision[]
+  activity  ActivityLog[]
+}
+
+/// Server-side sessions. Only a SHA-256 of the cookie token is stored.
+model Session {
+  id         String    @id @default(cuid())
+  tokenHash  String    @unique
+  userId     String
+  user       AdminUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt  DateTime
+  lastSeenAt DateTime  @default(now())
+  ip         String?
+  userAgent  String?
+  createdAt  DateTime  @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+/// Short-lived tokens that let the public site render draft content (preview).
+model PreviewToken {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([expiresAt])
+}
+
+// ───────────────────────── Media ─────────────────────────
+
+model MediaAsset {
+  id           String    @id @default(cuid())
+  storageKey   String    @unique
+  originalName String
+  mimeType     String
+  sizeBytes    Int
+  width        Int?
+  height       Int?
+  alt          String    @default("")
+  kind         MediaKind
+  createdAt    DateTime  @default(now())
+
+  profileAvatars    Profile[]
+  experienceLogos   Experience[]
+  projectImages     ProjectImage[]
+  certificationImgs Certification[]
+  blogCovers        BlogPost[]
+
+  @@index([createdAt])
+}
+
+// ───────────────────────── Singletons ─────────────────────────
+
+model Profile {
+  id              Int         @id @default(1)
+  fullName        String
+  headline        String
+  yearsExperience String      @default("")
+  location        String      @default("")
+  email           String
+  phone           String      @default("")
+  avatarId        String?
+  avatar          MediaAsset? @relation(fields: [avatarId], references: [id], onDelete: SetNull)
+  heroEyebrow     String      @default("")
+  heroHeading     String
+  heroSubheading  String      @default("")
+  heroCtas        Json        @default("[]")
+  summary         String
+  about           String[]
+  specializations String[]
+  interests       String      @default("")
+  updatedAt       DateTime    @updatedAt
+}
+
+model WebsiteSettings {
+  id             Int      @id @default(1)
+  siteTitle      String
+  seoTitle       String
+  seoDescription String
+  siteUrl        String
+  footerText     String   @default("")
+  defaultTheme   String   @default("system")
+  navItems       Json     @default("[]")
+  homeSections   Json     @default("[]")
+  updatedAt      DateTime @updatedAt
+}
+
+// ───────────────────────── Content ─────────────────────────
+
+model SocialLink {
+  id        String   @id @default(cuid())
+  label     String
+  url       String
+  icon      String
+  isVisible Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([sortOrder])
+}
+
+model SkillCategory {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  isVisible Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  skills Skill[]
+
+  @@index([sortOrder])
+}
+
+model Skill {
+  id              String        @id @default(cuid())
+  name            String
+  icon            String        @default("")
+  categoryId      String
+  category        SkillCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  status          ContentStatus @default(DRAFT)
+  isVisible       Boolean       @default(true)
+  sortOrder       Int           @default(0)
+  includeInResume Boolean       @default(true)
+  resumeSummary   String        @default("")
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@unique([categoryId, name])
+  @@index([status, sortOrder])
+}
+
+model Experience {
+  id               String        @id @default(cuid())
+  company          String
+  designation      String
+  employmentType   String        @default("")
+  location         String        @default("")
+  startDate        DateTime      @db.Date
+  endDate          DateTime?     @db.Date
+  isCurrent        Boolean       @default(false)
+  summary          String        @default("")
+  responsibilities String[]
+  achievements     String[]
+  technologies     String[]
+  logoId           String?
+  logo             MediaAsset?   @relation(fields: [logoId], references: [id], onDelete: SetNull)
+  status           ContentStatus @default(DRAFT)
+  isVisible        Boolean       @default(true)
+  sortOrder        Int           @default(0)
+  includeInResume  Boolean       @default(true)
+  resumeSummary    String        @default("")
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+model Project {
+  id              String         @id @default(cuid())
+  slug            String         @unique
+  title           String
+  summary         String
+  description     String[]
+  technologies    String[]
+  category        String
+  githubUrl       String?
+  liveUrl         String?
+  isFeatured      Boolean        @default(false)
+  status          ContentStatus  @default(DRAFT)
+  isVisible       Boolean        @default(true)
+  sortOrder       Int            @default(0)
+  includeInResume Boolean        @default(true)
+  resumeSummary   String         @default("")
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  images          ProjectImage[]
+
+  @@index([status, sortOrder])
+}
+
+model ProjectImage {
+  id        String     @id @default(cuid())
+  projectId String
+  project   Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  mediaId   String
+  media     MediaAsset @relation(fields: [mediaId], references: [id], onDelete: Cascade)
+  sortOrder Int        @default(0)
+
+  @@unique([projectId, mediaId])
+}
+
+model Education {
+  id              String        @id @default(cuid())
+  institution     String
+  degree          String
+  field           String        @default("")
+  location        String        @default("")
+  startYear       Int?
+  endYear         Int
+  summary         String        @default("")
+  courses         String[]
+  status          ContentStatus @default(DRAFT)
+  isVisible       Boolean       @default(true)
+  sortOrder       Int           @default(0)
+  includeInResume Boolean       @default(true)
+  resumeSummary   String        @default("")
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+model Certification {
+  id              String        @id @default(cuid())
+  name            String
+  issuer          String
+  issueDate       DateTime      @db.Date
+  credentialUrl   String?
+  imageId         String?
+  image           MediaAsset?   @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  status          ContentStatus @default(DRAFT)
+  isVisible       Boolean       @default(true)
+  sortOrder       Int           @default(0)
+  includeInResume Boolean       @default(true)
+  resumeSummary   String        @default("")
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+model Achievement {
+  id              String        @id @default(cuid())
+  title           String
+  description     String        @default("")
+  date            DateTime?     @db.Date
+  url             String?
+  status          ContentStatus @default(DRAFT)
+  isVisible       Boolean       @default(true)
+  sortOrder       Int           @default(0)
+  includeInResume Boolean       @default(true)
+  resumeSummary   String        @default("")
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+model BlogPost {
+  id             String        @id @default(cuid())
+  slug           String        @unique
+  title          String
+  excerpt        String
+  /// Sanitized on save (sanitize-html); safe to render.
+  contentHtml    String        @db.Text
+  category       String        @default("")
+  tags           String[]
+  coverImageId   String?
+  coverImage     MediaAsset?   @relation(fields: [coverImageId], references: [id], onDelete: SetNull)
+  seoTitle       String        @default("")
+  seoDescription String        @default("")
+  status         ContentStatus @default(DRAFT)
+  isVisible      Boolean       @default(true)
+  sortOrder      Int           @default(0)
+  publishedAt    DateTime?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([status, publishedAt])
+}
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  subject   String        @default("")
+  message   String        @db.Text
+  status    MessageStatus @default(NEW)
+  ipHash    String?
+  userAgent String?
+  createdAt DateTime      @default(now())
+
+  @@index([status, createdAt])
+}
+
+// ───────────────────────── Publishing ─────────────────────────
+
+/// One published state of the whole site. `version` only ever increases.
+model ContentRevision {
+  id          String     @id @default(cuid())
+  version     Int        @unique @default(autoincrement())
+  snapshot    Json
+  note        String     @default("")
+  createdById String?
+  createdBy   AdminUser? @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  createdAt   DateTime   @default(now())
+
+  resumeVersions ResumeVersion[]
+
+  @@index([createdAt])
+}
+
+/// Every admin change. Feeds "recent changes" and the unpublished-changes count.
+model ActivityLog {
+  id        String     @id @default(cuid())
+  userId    String?
+  user      AdminUser? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  entity    String
+  entityId  String?
+  label     String
+  createdAt DateTime   @default(now())
+
+  @@index([createdAt])
+}
+
+// ───────────────────────── Resume ─────────────────────────
+
+model ResumeSettings {
+  id                  Int            @id @default(1)
+  template            String         @default("classic")
+  fileName            String         @default("Resume.pdf")
+  sectionOrder        Json
+  sections            Json
+  maxProjects         Int            @default(3)
+  maxBulletsPerRole   Int            @default(4)
+  includePortfolioUrl Boolean        @default(true)
+  headlineOverride    String         @default("")
+  summaryOverride     String         @default("")
+  /// Only moves to a SUCCEEDED version, and only forward. The download
+  /// endpoint serves this file.
+  currentVersionId    String?        @unique
+  currentVersion      ResumeVersion? @relation("CurrentResume", fields: [currentVersionId], references: [id], onDelete: SetNull)
+  updatedAt           DateTime       @updatedAt
+}
+
+model ResumeVersion {
+  id          String              @id @default(cuid())
+  version     Int                 @unique @default(autoincrement())
+  revisionId  String
+  revision    ContentRevision     @relation(fields: [revisionId], references: [id], onDelete: Cascade)
+  status      ResumeVersionStatus @default(PENDING)
+  template    String
+  storageKey  String?
+  sha256      String?
+  sizeBytes   Int?
+  durationMs  Int?
+  error       String?
+  createdAt   DateTime            @default(now())
+  completedAt DateTime?
+
+  currentFor ResumeSettings? @relation("CurrentResume")
+
+  @@index([status, version])
+}

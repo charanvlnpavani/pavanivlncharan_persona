@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { NavItem, SocialLink } from "@/lib/types";
+import type { NavItem, SocialLink } from "@portfolio/shared";
 import { SocialLinks } from "./social-links";
 
 type Props = {

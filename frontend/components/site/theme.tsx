@@ -5,9 +5,16 @@ import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
 import { Button } from "@/components/ui/button";
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({
+  children,
+  defaultTheme = "system",
+}: {
+  children: React.ReactNode;
+  /** Set in the admin (Website settings → Theme). Visitors can still switch. */
+  defaultTheme?: "light" | "dark" | "system";
+}) {
   return (
-    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+    <NextThemesProvider attribute="class" defaultTheme={defaultTheme} enableSystem disableTransitionOnChange>
       {children}
     </NextThemesProvider>
   );

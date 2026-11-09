@@ -1,14 +1,14 @@
 import { ImageResponse } from "next/og";
-import { getSiteContent } from "@/lib/content";
+import { getSite } from "@/lib/api";
 
 /* The preview card shown when the site is shared on LinkedIn, X, Slack, etc.
-   Generated at build time with the default font. */
-export const alt = "Pavani VLN Charan · Full-Stack Developer";
+   Built from published content; refreshed when you publish. */
+export const alt = "Portfolio preview";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OpengraphImage() {
-  const { profile, hero } = await getSiteContent();
+  const { profile } = await getSite();
   return new ImageResponse(
     (
       <div
@@ -43,8 +43,8 @@ export default async function OpengraphImage() {
           <div style={{ fontSize: 30, color: "#a9adb8" }}>{profile.fullName}</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          <div style={{ fontSize: 30, color: "#5eead4" }}>{profile.title}</div>
-          <div style={{ fontSize: 60, fontWeight: 700, lineHeight: 1.1, maxWidth: 1000 }}>{hero.heading}</div>
+          <div style={{ fontSize: 30, color: "#5eead4" }}>{profile.headline}</div>
+          <div style={{ fontSize: 60, fontWeight: 700, lineHeight: 1.1, maxWidth: 1000 }}>{profile.heroHeading}</div>
         </div>
         <div style={{ fontSize: 26, color: "#a9adb8" }}>{profile.location}</div>
       </div>

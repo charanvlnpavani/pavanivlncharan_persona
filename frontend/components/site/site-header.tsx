@@ -13,7 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import type { NavItem } from "@/lib/types";
+import type { NavItem } from "@portfolio/shared";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme";
 
@@ -21,7 +21,8 @@ type Props = {
   siteTitle: string;
   initials: string;
   navItems: NavItem[];
-  resumeUrl: string;
+  /** Stable link to the latest resume PDF, or null if none is published yet. */
+  resumeUrl: string | null;
 };
 
 function isActive(pathname: string, href: string) {
@@ -74,12 +75,14 @@ export function SiteHeader({ siteTitle, initials, navItems, resumeUrl }: Props) 
         </nav>
 
         <div className="flex items-center gap-1">
-          <Button asChild variant="outline" size="sm" className="hidden sm:inline-flex">
-            <a href={resumeUrl} download>
-              <FileDown aria-hidden="true" />
-              Resume
-            </a>
-          </Button>
+          {resumeUrl && (
+            <Button asChild variant="outline" size="sm" className="hidden sm:inline-flex">
+              <a href={resumeUrl} download>
+                <FileDown aria-hidden="true" />
+                Resume
+              </a>
+            </Button>
+          )}
           <ThemeToggle />
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -114,12 +117,14 @@ export function SiteHeader({ siteTitle, initials, navItems, resumeUrl }: Props) 
                     );
                   })}
                 </ul>
-                <Button asChild variant="outline" className="mt-6 w-full">
-                  <a href={resumeUrl} download>
-                    <FileDown aria-hidden="true" />
-                    Download resume
-                  </a>
-                </Button>
+                {resumeUrl && (
+                  <Button asChild variant="outline" className="mt-6 w-full">
+                    <a href={resumeUrl} download>
+                      <FileDown aria-hidden="true" />
+                      Download resume
+                    </a>
+                  </Button>
+                )}
               </nav>
             </SheetContent>
           </Sheet>
