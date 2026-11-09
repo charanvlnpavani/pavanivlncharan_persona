@@ -11,6 +11,14 @@
 import type { BlogPost, Project, PublicSite } from "@portfolio/shared";
 import { cacheLife, cacheTag } from "next/cache";
 import { draftMode } from "next/headers";
+import fallbackSite from "./fallback-site.json";
+
+/**
+ * Bundled snapshot of published content, used when the API can't be reached
+ * (e.g. the site is deployed before the backend). Refresh it with
+ * `curl -s localhost:4000/api/public/site` once content changes.
+ */
+const FALLBACK_SITE = fallbackSite as PublicSite;
 
 const BACKEND_URL = (process.env.BACKEND_URL ?? "http://localhost:4000").replace(/\/$/, "");
 const SERVER_SECRET = process.env.REVALIDATE_SECRET ?? "";
@@ -44,9 +52,15 @@ export async function getSite(): Promise<PublicSite & { draft?: boolean }> {
   "use cache";
   cachedContent();
   const { isEnabled } = await draftMode();
-  return isEnabled
-    ? backend<PublicSite & { draft: boolean }>("/api/preview/snapshot", { headers: draftHeaders() })
-    : backend<PublicSite>("/api/public/site");
+  if (isEnabled) {
+    return backend<PublicSite & { draft: boolean }>("/api/preview/snapshot", { headers: draftHeaders() });
+  }
+  try {
+    return await backend<PublicSite>("/api/public/site");
+  } catch (err) {
+    console.warn(`[api] ${BACKEND_URL} unreachable, serving bundled content:`, (err as Error).message);
+    return FALLBACK_SITE;
+  }
 }
 
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
@@ -63,7 +77,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
       ? await backend<BlogPost>(`/api/preview/blog/${encodeURIComponent(slug)}`, { headers: draftHeaders() })
       : await backend<BlogPost>(`/api/public/blog/${encodeURIComponent(slug)}`);
   } catch (err) {
-    if (err instanceof NotFoundError) return null;
+    if (err instanceof NotFoundError || !isEnabled) return null;
     throw err;
   }
 }

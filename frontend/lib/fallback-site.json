@@ -1,0 +1,665 @@
+{
+  "blog": [],
+  "skills": [
+    {
+      "id": "cmw99ycy800051asqpoqo7t1y",
+      "name": "Frontend",
+      "skills": [
+        {
+          "id": "cmw99ycy800061asq9hz6wre7",
+          "icon": null,
+          "name": "HTML",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycy800071asqg2dgw07y",
+          "icon": null,
+          "name": "CSS",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycy800081asqobyeo01f",
+          "icon": null,
+          "name": "JavaScript",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycy800091asq2upc8zdz",
+          "icon": null,
+          "name": "TypeScript",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycy8000a1asqvtxxp4zu",
+          "icon": null,
+          "name": "React",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycy8000b1asqx59um4an",
+          "icon": null,
+          "name": "Tailwind CSS",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycy8000c1asqh709a85g",
+          "icon": null,
+          "name": "Bootstrap",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "cmw99ycyc000d1asqespzxmd4",
+      "name": "Backend",
+      "skills": [
+        {
+          "id": "cmw99ycyc000e1asqoc7ige1c",
+          "icon": null,
+          "name": "Node.js",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycyc000f1asqoa6ooz5w",
+          "icon": null,
+          "name": "Express.js",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycyc000g1asq31n4oqyp",
+          "icon": null,
+          "name": "PHP",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "cmw99ycyf000h1asq6yvrf8dh",
+      "name": "Database",
+      "skills": [
+        {
+          "id": "cmw99ycyf000i1asqmbqsuye9",
+          "icon": null,
+          "name": "MongoDB",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycyf000j1asqjq1cjyh0",
+          "icon": null,
+          "name": "MySQL",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "cmw99ycyh000k1asqm40lrdlh",
+      "name": "APIs & Tools",
+      "skills": [
+        {
+          "id": "cmw99ycyh000l1asqxulozj1a",
+          "icon": null,
+          "name": "REST APIs",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycyh000m1asq4lpokcfy",
+          "icon": null,
+          "name": "Postman",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycyh000n1asqmixqma0c",
+          "icon": null,
+          "name": "GitHub",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "cmw99ycyk000o1asqm7wjg1ni",
+      "name": "AI Tools",
+      "skills": [
+        {
+          "id": "cmw99ycyk000p1asqibor9h6x",
+          "icon": null,
+          "name": "ChatGPT",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycyk000q1asqfvnmh5fb",
+          "icon": null,
+          "name": "GitHub Copilot",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycyk000r1asqnqgfyego",
+          "icon": null,
+          "name": "Perplexity",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        },
+        {
+          "id": "cmw99ycyk000s1asqq7d9vi8i",
+          "icon": null,
+          "name": "NotebookLM",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "cmw99ycym000t1asqgcei2tbi",
+      "name": "Foundations",
+      "skills": [
+        {
+          "id": "cmw99ycyn000u1asqknymnla2",
+          "icon": null,
+          "name": "Data Structures & Algorithms",
+          "resume": {
+            "include": true,
+            "summary": null
+          }
+        }
+      ]
+    }
+  ],
+  "profile": {
+    "about": [
+      "I am a Full-Stack Developer with experience in building scalable, secure, and user-centric web applications. I specialize in JavaScript, React.js, Node.js, MongoDB, Express.js, Tailwind CSS, and REST APIs, delivering complete end-to-end solutions from frontend interfaces to backend systems.",
+      "I have developed and integrated role-based authentication and authorization systems for enterprise and government applications, ensuring secure multi-user access. I have also engineered a multi-role B2B SaaS platform for property management and built a B2B employee management system with automated PDF ID card generation, improving operational efficiency.",
+      "I am passionate about clean code, performance optimization, and learning modern full-stack technologies. I enjoy collaborating with cross-functional teams to build reliable products that solve real-world problems."
+    ],
+    "email": "pavanivlncharan@outlook.com",
+    "phone": null,
+    "avatar": {
+      "id": "cmw9bfjsu0008i5sq5hupa5l8",
+      "alt": "Pavani VLN Charan",
+      "url": "/fallback/avatar.jpg",
+      "width": 774,
+      "height": 927
+    },
+    "summary": "Full-Stack Developer with 3+ years of experience building scalable, secure, user-centric web applications with JavaScript, TypeScript, React, Node.js, Express, MongoDB and REST APIs. Built role-based authentication for enterprise and government projects, a multi-role B2B SaaS platform for property management, and automated PDF ID-card generation that cut manual data entry.",
+    "fullName": "Pavani VLN Charan",
+    "headline": "Full-Stack Developer",
+    "heroCtas": [
+      {
+        "href": "/projects",
+        "label": "View projects",
+        "variant": "primary"
+      },
+      {
+        "href": "/contact",
+        "label": "Get in touch",
+        "variant": "secondary"
+      }
+    ],
+    "initials": "PC",
+    "location": "Hyderabad, India",
+    "interests": "Passionate about clean code, continuous learning of modern full-stack technologies, and collaborating with teams to solve real-world problems.",
+    "heroEyebrow": "Full-Stack Developer · Hyderabad, India",
+    "heroHeading": "I build secure, scalable web applications, from interface to API.",
+    "heroSubheading": "4+ years delivering end-to-end products with React, TypeScript, Node.js and Express: role-based access systems, multi-role B2B SaaS platforms and automation that saves teams real hours.",
+    "specializations": [
+      "Role-based authentication & authorization",
+      "B2B SaaS platforms",
+      "Automated PDF generation & ID systems",
+      "Performance optimization"
+    ],
+    "yearsExperience": "4+ years"
+  },
+  "socials": [
+    {
+      "id": "cmw99ycy000011asqasokm5pw",
+      "url": "https://github.com/charanvlnpavani",
+      "icon": "github",
+      "label": "GitHub"
+    },
+    {
+      "id": "cmw99ycy000021asq61w4e32p",
+      "url": "https://www.linkedin.com/in/charanvlnpavani/",
+      "icon": "linkedin",
+      "label": "LinkedIn"
+    },
+    {
+      "id": "cmw99ycy000031asqypgzarcq",
+      "url": "https://x.com/charanvlnpavani",
+      "icon": "x",
+      "label": "X (Twitter)"
+    },
+    {
+      "id": "cmw99ycy000041asqda4k4ppu",
+      "url": "mailto:pavanivlncharan@outlook.com",
+      "icon": "mail",
+      "label": "Email"
+    }
+  ],
+  "version": 11,
+  "projects": [
+    {
+      "id": "cmw99ycyx000z1asqc4gyaweq",
+      "slug": "coffeequeue-pro",
+      "title": "CoffeeQueue Pro",
+      "images": [],
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "liveUrl": "https://coffeequeue-pro.vercel.app",
+      "summary": "A virtual queue for busy cafés: customers join online, see their live position and get updates without standing in line.",
+      "category": "Web app",
+      "githubUrl": null,
+      "isFeatured": true,
+      "description": [
+        "In busy café environments, long physical queues frustrate customers and reduce operational efficiency. CoffeeQueue Pro solves this by offering a virtual queue system where customers can join the queue online, see their real-time position, and receive updates without waiting in line, freeing them to relax, browse the café menu, or explore nearby areas while they wait."
+      ],
+      "technologies": [
+        "React.js",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Responsive Web Design",
+        "Git & GitHub"
+      ]
+    },
+    {
+      "id": "cmw99ycyx00101asq5j75jomh",
+      "slug": "ai-recipe-creator",
+      "title": "AI Recipe Creator",
+      "images": [],
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "liveUrl": "https://ai-recipe-creator-alpha.vercel.app/",
+      "summary": "Generates complete recipes from natural-language prompts, tailored to available ingredients, diet, servings and cuisine.",
+      "category": "Web app",
+      "githubUrl": "https://github.com/charanvlnpavani/ai_recipe_creator",
+      "isFeatured": true,
+      "description": [
+        "AI Recipe Creator uses natural language prompts to generate complete recipes tailored to available ingredients, dietary restrictions, serving size, and cuisine style. It produces ingredient lists, step-by-step instructions, and optional shopping or nutrition info to make cooking faster and easier."
+      ],
+      "technologies": [
+        "React.js",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Responsive Web Design",
+        "Git & GitHub"
+      ]
+    },
+    {
+      "id": "cmw99ycyx00111asq3e5luram",
+      "slug": "communication-app",
+      "title": "Communication App",
+      "images": [],
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "liveUrl": "https://home-task-cyan.vercel.app/",
+      "summary": "A responsive real-time chat interface with conversations, contacts and smooth interaction flows.",
+      "category": "Web app",
+      "githubUrl": "https://github.com/charanvlnpavani/doctor-communicate",
+      "isFeatured": true,
+      "description": [
+        "Built a responsive real-time communication platform using React.js and modern frontend practices. The app allows users to send and receive messages in a chat interface, view active conversations, manage contacts, and features an intuitive UI with smooth, user-friendly interaction flows.",
+        "Backend functionality is simulated using local state and storage to prototype real-world UX."
+      ],
+      "technologies": [
+        "React.js",
+        "JavaScript",
+        "CSS",
+        "Responsive Design",
+        "Local Storage"
+      ]
+    },
+    {
+      "id": "cmw99ycyx00121asq7b44qmmp",
+      "slug": "property-management-saas",
+      "title": "Property Management SaaS",
+      "images": [],
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "liveUrl": null,
+      "summary": "A multi-role SaaS platform for property managers with role-based access control and automation features.",
+      "category": "Professional work",
+      "githubUrl": null,
+      "isFeatured": false,
+      "description": [],
+      "technologies": [
+        "PHP",
+        "MySQL",
+        "Role-based access control"
+      ]
+    },
+    {
+      "id": "cmw99ycyx00131asqhz7ptjic",
+      "slug": "employee-management-id-system",
+      "title": "Employee Management & ID System",
+      "images": [],
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "liveUrl": null,
+      "summary": "B2B system for employee records and automated PDF ID card generation to streamline onboarding and operations.",
+      "category": "Professional work",
+      "githubUrl": null,
+      "isFeatured": false,
+      "description": [],
+      "technologies": [
+        "PHP",
+        "MySQL",
+        "PDF generation"
+      ]
+    }
+  ],
+  "settings": {
+    "siteUrl": "http://localhost:3000",
+    "navItems": [
+      {
+        "href": "/#about",
+        "label": "About"
+      },
+      {
+        "href": "/projects",
+        "label": "Projects"
+      },
+      {
+        "href": "/experience",
+        "label": "Experience"
+      },
+      {
+        "href": "/skills",
+        "label": "Skills"
+      },
+      {
+        "href": "/blog",
+        "label": "Blog"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact"
+      }
+    ],
+    "seoTitle": "Pavani VLN Charan · Full-Stack Developer",
+    "siteTitle": "Pavani VLN Charan",
+    "footerText": "Designed and built with Next.js, TypeScript and Tailwind CSS.",
+    "defaultTheme": "system",
+    "homeSections": [
+      {
+        "key": "about",
+        "visible": true
+      },
+      {
+        "key": "projects",
+        "visible": true
+      },
+      {
+        "key": "experience",
+        "visible": true
+      },
+      {
+        "key": "skills",
+        "visible": true
+      },
+      {
+        "key": "education",
+        "visible": true
+      },
+      {
+        "key": "certifications",
+        "visible": true
+      },
+      {
+        "key": "achievements",
+        "visible": true
+      },
+      {
+        "key": "blog",
+        "visible": true
+      },
+      {
+        "key": "contact",
+        "visible": true
+      }
+    ],
+    "seoDescription": "Full-stack developer in Hyderabad building secure, scalable web applications with React, TypeScript, Node.js and Express."
+  },
+  "education": [
+    {
+      "id": "cmw99ycz000141asq5je163i5",
+      "field": "Computer Science and Engineering",
+      "degree": "M.Tech",
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "courses": [],
+      "endYear": 2023,
+      "summary": null,
+      "location": null,
+      "startYear": null,
+      "institution": "PBR Visvodaya Institute of Technology & Science"
+    },
+    {
+      "id": "cmw99ycz000151asquv2j2iga",
+      "field": "Computer Science and Engineering",
+      "degree": "B.Tech",
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "courses": [],
+      "endYear": 2019,
+      "summary": null,
+      "location": null,
+      "startYear": null,
+      "institution": "PBR Visvodaya Institute of Technology & Science"
+    },
+    {
+      "id": "cmw99ycz000161asqa9fw4xiu",
+      "field": "M.P.C",
+      "degree": "Intermediate",
+      "resume": {
+        "include": false,
+        "summary": null
+      },
+      "courses": [],
+      "endYear": 2015,
+      "summary": null,
+      "location": null,
+      "startYear": null,
+      "institution": "Srinivasa Junior College"
+    },
+    {
+      "id": "cmw99ycz000171asq2xp55bg4",
+      "field": "General Studies",
+      "degree": "10th Grade",
+      "resume": {
+        "include": false,
+        "summary": null
+      },
+      "courses": [],
+      "endYear": 2013,
+      "summary": null,
+      "location": null,
+      "startYear": null,
+      "institution": "Ratnam High School"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "cmw99ycyq000v1asq63dndrbp",
+      "logo": null,
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "company": "NxtWave",
+      "endDate": "2025-12",
+      "summary": null,
+      "location": "Hyderabad, Telangana, India",
+      "isCurrent": false,
+      "startDate": "2025-09",
+      "designation": "Software Developer Engineer",
+      "achievements": [],
+      "technologies": [
+        "Python",
+        "Bootstrap",
+        "Tailwind CSS",
+        "HTML5",
+        "JavaScript",
+        "MERN"
+      ],
+      "employmentType": "Full-time",
+      "responsibilities": [
+        "Contributed to development of static and dynamic web applications using HTML, CSS, Bootstrap, JavaScript, and Python.",
+        "Focused on debugging workflows and building data-driven features while maintaining clean code practices."
+      ]
+    },
+    {
+      "id": "cmw99ycyq000w1asq064c6ke5",
+      "logo": null,
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "company": "Logpilot",
+      "endDate": "2025-06",
+      "summary": null,
+      "location": "Germany · Remote",
+      "isCurrent": false,
+      "startDate": "2024-12",
+      "designation": "SDE 1 · Frontend Developer",
+      "achievements": [],
+      "technologies": [
+        "Frontend Development",
+        "React.js",
+        "JavaScript"
+      ],
+      "employmentType": "Full-time",
+      "responsibilities": [
+        "Developed responsive web applications using React.js and JavaScript that improved user engagement by 30%.",
+        "Collaborated with cross-functional teams to implement user-centered design principles and improve usability.",
+        "Engaged in continuous learning of modern web technologies to contribute innovative solutions."
+      ]
+    },
+    {
+      "id": "cmw99ycyq000x1asqcalqnskz",
+      "logo": null,
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "company": "Entro Labs IT Solutions Pvt Ltd",
+      "endDate": "2024-10",
+      "summary": null,
+      "location": "Hyderabad, Telangana, India · On-site",
+      "isCurrent": false,
+      "startDate": "2024-04",
+      "designation": "SDE 1 · Frontend Developer",
+      "achievements": [],
+      "technologies": [
+        "PHP",
+        "MySQL",
+        "B2B SaaS Development",
+        "Authentication Systems"
+      ],
+      "employmentType": "Full-time",
+      "responsibilities": [
+        "Developed and integrated a robust role-based authentication system for a government school management project using PHP and MySQL.",
+        "Engineered and launched a scalable multi-role B2B SaaS platform for property management, reducing administrative overhead by 20%.",
+        "Created an automated system to generate downloadable PDF ID cards, reducing manual data entry efforts."
+      ]
+    },
+    {
+      "id": "cmw99ycyq000y1asqluhhzpdg",
+      "logo": null,
+      "resume": {
+        "include": true,
+        "summary": null
+      },
+      "company": "Deepija Telecom Pvt Ltd",
+      "endDate": "2024-03",
+      "summary": null,
+      "location": "Hyderabad, Telangana, India · On-site",
+      "isCurrent": false,
+      "startDate": "2023-02",
+      "designation": "SDE 1 · Frontend Developer",
+      "achievements": [],
+      "technologies": [
+        "PHP",
+        "MySQL",
+        "Dashboard Development"
+      ],
+      "employmentType": "Full-time",
+      "responsibilities": [
+        "Developed interactive dashboards and features that improved monitoring and administrative workflows.",
+        "Collaborated with cross-functional teams to identify performance bottlenecks and implemented optimizations that improved overall application efficiency."
+      ]
+    }
+  ],
+  "publishedAt": "2026-11-09T13:48:41.120Z",
+  "achievements": [],
+  "certifications": []
+}
