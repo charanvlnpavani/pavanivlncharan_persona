@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* next-themes toggles the `dark` class on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens
+ * - Neutral zinc base + one accent ("brand", deep teal).
+ * - shadcn/ui components read these variables, so changing a value here
+ *   re-themes every component.
+ */
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(0.99 0.002 247);
+  --foreground: oklch(0.2 0.012 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.012 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.012 265);
+  --primary: oklch(0.24 0.012 265);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.96 0.004 265);
+  --secondary-foreground: oklch(0.24 0.012 265);
+  --muted: oklch(0.96 0.004 265);
+  --muted-foreground: oklch(0.48 0.012 265);
+  --accent: oklch(0.955 0.006 265);
+  --accent-foreground: oklch(0.24 0.012 265);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.91 0.005 265);
+  --input: oklch(0.91 0.005 265);
+  --ring: oklch(0.51 0.086 190);
+
+  --brand: oklch(0.5 0.09 190);
+  --brand-foreground: oklch(0.985 0 0);
+  --brand-soft: oklch(0.95 0.03 190);
+}
+
+.dark {
+  --background: oklch(0.16 0.008 265);
+  --foreground: oklch(0.95 0.004 265);
+  --card: oklch(0.195 0.009 265);
+  --card-foreground: oklch(0.95 0.004 265);
+  --popover: oklch(0.195 0.009 265);
+  --popover-foreground: oklch(0.95 0.004 265);
+  --primary: oklch(0.95 0.004 265);
+  --primary-foreground: oklch(0.2 0.012 265);
+  --secondary: oklch(0.25 0.01 265);
+  --secondary-foreground: oklch(0.95 0.004 265);
+  --muted: oklch(0.25 0.01 265);
+  --muted-foreground: oklch(0.72 0.012 265);
+  --accent: oklch(0.26 0.01 265);
+  --accent-foreground: oklch(0.95 0.004 265);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.78 0.12 185);
+
+  --brand: oklch(0.8 0.12 182);
+  --brand-foreground: oklch(0.2 0.012 265);
+  --brand-soft: oklch(0.3 0.05 190);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    /* Keep anchored sections clear of the sticky header. */
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background: var(--brand-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Subtle fade-up as sections scroll into view. CSS-only, no JavaScript.
+   Skipped for reduced-motion users and in browsers without scroll timelines. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
